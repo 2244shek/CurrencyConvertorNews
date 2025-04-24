@@ -1,58 +1,3 @@
-# from flask import Flask, request, jsonify
-# import requests
-# from bs4 import BeautifulSoup
-# from flask_cors import CORS 
-
-# app = Flask(__name__)
-# CORS(app)  # Enable CORS for all routes
-
-# # Function to get the currency conversion rate from XE.com
-# def get_currency_rate(from_currency, to_currency):
-#     url = f'https://api.currencylayer.com/convert?access_key=8bc6d20603ed15367a6f4278f0fa86e4&from={from_currency}&to={to_currency}&amount=1'
-#     response = requests.get(url)
-#     # soup = BeautifulSoup(response.text, 'html.parser')
-#     # rate = soup.find('span', {'class': 'converterresult-toAmount'}).text.strip()
-#     rate = response.json().get('result', None)
-#     return rate
-
-# # Function to search for relevant news articles
-# def get_currency_news(currency_pair):
-#     # Use a news API or web scraping to get relevant news
-#     # For simplicity, we'll use a dummy news API response here
-#     api_key = '9da24bc1bb4e4875a09ba137baec2f55'  # Replace with your News API key
-#     url = f'https://newsapi.org/v2/everything?q={currency_pair}&apiKey={api_key}'
-#     response = requests.get(url)
-#     articles = response.json().get('articles', [])
-#     news = []
-#     for article in articles[:3]:  # Fetch top 3 news articles
-#         news.append({
-#             'title': article['title'],
-#             'link': article['url'],
-#             'source': article['source']['name']
-#         })
-#     return news
-
-# @app.route('/get_currency_data', methods=['POST'])
-# def get_currency_data():
-#     data = request.get_json()
-#     from_currency = data['from']
-#     to_currency = data['to']
-
-#     # Get the latest currency conversion rate
-#     rate = get_currency_rate(from_currency, to_currency)
-
-#     # Get related news articles
-#     currency_pair = f'{from_currency}-{to_currency}'
-#     news = get_currency_news(currency_pair)
-#     return jsonify({
-#         'rate': rate,
-#         'news': news
-#     })
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-
 from flask import Flask, request, jsonify
 import requests
 from bs4 import BeautifulSoup
@@ -102,7 +47,6 @@ def get_currency_news(currency_pair):
         # Create a search query for the currency pair
         # query = f"{currency_pair} currency exchange forex"
         url = f'https://newsapi.org/v2/everything?q={currency_pair}&language=en&sortBy=publishedAt&from=2025-03-24&pageSize=5&apiKey={api_key}'
-        # url = f'https://newsapi.org/v2/everything?q={currency_pair}exchangerate&language=en&sortBy=publishedAt&pageSize=3&apiKey={api_key}'
         response = requests.get(url)
         data = response.json()
         
