@@ -44,12 +44,12 @@ A modern web application that converts currencies and displays related financial
 git clone https://github.com/yourusername/currency-converter.git
 cd currency-converter
 ```
-2.Create a virtual environment:
+2. Create a virtual environment:
 ```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-3.Install dependencies:
+3. Install dependencies:
 ```
 pip install flask requests beautifulsoup4 flask-cors
 ```
