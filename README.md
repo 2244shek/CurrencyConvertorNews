@@ -2,7 +2,7 @@
 
 A modern web application that converts currencies and displays related financial news. This project combines a responsive frontend with a Flask backend to deliver real-time currency conversion rates and relevant news articles.
 
-![Currency Converter Screenshot](/api/placeholder/800/400)
+![Currency Converter Screenshot](https://github.com/user-attachments/assets/96fd3078-689f-4330-ba55-1d178c31eb98)
 
 ## Features
 
